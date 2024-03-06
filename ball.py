@@ -10,11 +10,20 @@ class Ball(Turtle):
         self.color("white")
         self.penup()
         self.move()
+        self.x_move = 10
+        self.y_move = 10
 
 
     def move(self):
-        
-        y_achse = self.ycor() + 10
-        x_achse = self.xcor() + 10
+
+        y_achse = self.ycor() + self.x_move
+        x_achse = self.xcor() + self.y_move
         self.goto(x=x_achse,y=y_achse)
         
+        
+
+    def bounce(self):
+        self.y_move *= -1
+    
+
+    
